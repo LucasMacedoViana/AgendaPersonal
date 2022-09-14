@@ -1,15 +1,15 @@
 package router
 
 import (
-	"agenda-personal/models"
+	"agenda-personal/controllers"
 	"github.com/gofiber/fiber/v2"
 )
 
 func IniciandoRotas(app *fiber.App) {
 	perfil := app.Group("/aluno")
-	perfil.Get("/", models.BuscandoAlunos)
-	perfil.Get("/:id", models.BuscandoAluno)
-	perfil.Post("/:id", models.CriandoAluno)
-	perfil.Put("/:id", models.EditandoAluno)
-	perfil.Delete("/:id", models.ApagandoAluno)
+	perfil.Get("/", controllers.BuscandoAlunos)
+	perfil.Get("/:id", controllers.BuscandoAluno)
+	perfil.Post("/:id", controllers.CriandoAluno)
+	perfil.Put("/:id", controllers.EditandoAluno)
+	perfil.Delete("/:id", controllers.ApagandoAluno)
 }
